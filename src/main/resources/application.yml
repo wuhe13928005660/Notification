@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: notification-service
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: wuhe13928005660@gmail.com # <-- replace with your Gmail address
+    password: cuekatekponawgll # <-- replace with your Gmail app password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# Slack Configuration
+slack:
+  webhook:
+    url: ${SLACK_WEBHOOK_URL:https://hooks.slack.com/services/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} # Replace with your actual Slack webhook URL
+  channel: ${SLACK_CHANNEL:cafe-1--notification-feature} # Channel to send notifications to
+  username: ${SLACK_USERNAME:BulkMagic Bot} # Bot username
+  icon-emoji: ${SLACK_ICON_EMOJI::shopping_cart:} # Bot icon emoji
+
+server:
+  port: 8081 

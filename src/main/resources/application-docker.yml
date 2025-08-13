@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: notification-service
+    cloud:
+      function:
+        definition: orderCreated
+        web:
+          path: /webhook/order
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: wuhe13928005660@gmail.com # <-- replace with your Gmail address
+    password: cuekatekponawgll
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: 8081
+
+# Docker-specific configurations
+logging:
+  level:
+    com.ecommerce.notification: DEBUG
+    org.springframework.mail: DEBUG 
